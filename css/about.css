@@ -1,0 +1,48 @@
+.project-description {
+    width: 746px;
+    font-size: 24px !important;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.about-page-header h2 {
+    margin: 40px auto 20px !important;
+    font-size: 50px !important;
+}
+
+.contact {
+    width: 746px;
+    margin: 20px auto;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.contact p {
+    margin: 0 !important;
+    padding: 10px;
+}
+
+.about-footer {
+    width: 746px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.jumbotron {
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.text-muted {
+    font-size: 15px !important;
+    color: #aaa !important;
+}

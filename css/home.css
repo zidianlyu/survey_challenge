@@ -1,0 +1,107 @@
+.operations {
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media (max-width:1050px) {
+    .operations p {
+        display: none;
+    }
+    .operations::after {
+        content: "Please expand the screen";
+        background-color: #d31e17;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 30px;
+        font-weight: 100;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+.func-paragrap {
+    cursor: default;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.075);
+    padding: 10px 10px 10px 110px;
+    margin: 0 !important;
+}
+
+.func-paragrap:hover {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 10px 10px 200px !important;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.func-paragrap strong {
+    margin: 0 5px;
+}
+
+#reportTips p {
+    border-radius: 5px 5px 0 0;
+}
+
+#reportTips p:hover {
+    border-radius: 5px 5px 0 0;
+}
+
+#resetTips p {
+    border-radius: 0 0 5px 5px;
+}
+
+#resetTips p:hover {
+    border-radius: 0 0 5px 5px;
+}
+
+.func-paragrap span {
+    font-family: 'Varela Round', sans-serif !important;
+    font-size: 18px;
+    color: #777;
+    background: #e7e7e7;
+    padding: 10px;
+    display: inline-block;
+    width: 80px;
+    margin: 0 7px;
+    text-align: center;
+}
+
+.total-survey-answer {
+    font-family: 'Varela Round', sans-serif !important;
+    font-size: 18px;
+    background-color: #d31e17;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 30px;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: text-bottom;
+}
+
+.home-transition-decorator {
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.home-transition-decorator .line {
+    text-decoration: line-through;
+}
+
+.home-transition-decorator .toten {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 200;
+    margin: 0 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.survey-start {
+    width: 155px;
+}

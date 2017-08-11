@@ -1,0 +1,30 @@
+canvas {
+    max-height: 600px !important;
+    width: auto !important;
+}
+@media(max-width: 1020px){
+    .data-chart canvas{
+        display: none !important;
+    }
+    .data-chart::after{
+        content: "Please expand the screen";
+        background-color: #d31e17;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 30px;
+        font-weight: 100;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+.data-chart {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.summary-chart {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 25px;
+}

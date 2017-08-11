@@ -1,0 +1,85 @@
+@-webkit-keyframes bounceUp {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+    }
+    80% {
+        -webkit-transform: translateY(-10px);
+    }
+}
+
+#add{
+    position: relative;
+}
+
+.add-tips {
+    position: absolute;
+    bottom: -55px;
+    right: 12px;
+    margin: 0 5px 0 0;
+    font-size: 30px !important;
+    color: #f0ad4e;
+    -webkit-animation: bounceUp 2s infinite ease-in-out;
+    z-index: 1;
+}
+
+.reset-tips {
+    position: absolute;
+    bottom: -55px;
+    right: 22px;
+    margin: 0 5px 0 0;
+    font-size: 30px !important;
+    color: #f0ad4e;
+    -webkit-animation: bounceUp 2s infinite ease-in-out;
+    z-index: 1;
+}
+
+.report-tips {
+    position: absolute;
+    bottom: -55px;
+    right: 25px;
+    margin: 0 5px 0 0;
+    font-size: 30px !important;
+    color: #f0ad4e;
+    -webkit-animation: bounceUp 2s infinite ease-in-out;
+    z-index: 1;
+}
+
+@-webkit-keyframes bounceRight {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateX(-20px);
+    }
+    80% {
+        -webkit-transform: translateX(-10px);
+    }
+}
+
+#build-summary, .survey-form{
+    position: relative;
+}
+.show-right {
+    position: absolute;
+    bottom: 10px;
+    left: -40px;
+    margin: 0 5px 0 0;
+    font-size: 30px !important;
+    color: #f0ad4e;
+    -webkit-animation: bounceRight 2s infinite ease-in-out;
+    z-index: 1;
+}
+
+.show-right-lg {
+    position: absolute;
+    top: -10px;
+    left: -50px;
+    margin: 0 5px 0 0;
+    font-size: 50px !important;
+    color: #f0ad4e;
+    -webkit-animation: bounceRight 2s infinite ease-in-out;
+    z-index: 1;
+}

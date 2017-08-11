@@ -1,0 +1,33 @@
+{% extends 'index.html' %} {% block body %}
+<div class="jumbotron text-center">
+    <img src="https://png.icons8.com/tesla/color/96" title="Tesla" width="96" height="96">
+    <h1>Tesla Survey</h1>
+    <p>Please answer some questions</p>
+    <div>
+        <p>We have <span class="total-survey-answer">{{total_survey_answer}}</span> suvery answers now</p>
+    </div>
+    <div class="operations">
+        <div id="reportTips">
+            <p class="func-paragrap">Click <span>Report</span> to <strong>VIEW</strong> data analysis</p>
+        </div>
+        <div id="addTips">
+            <p class="func-paragrap">Click <span>Add</span> to <strong>INSTALL</strong> random data</p>
+        </div>
+        <div id="resetTips">
+            <p class="func-paragrap">Click <span>Reset</span> to <strong>CLEAR</strong> collected data</p>
+        </div>
+    </div>
+
+    <div class="home-transition-decorator">
+        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="toten">or</span>
+        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <a href="/survey" class="btn btn-primary btn-lg survey-start transition-button-focus">Start</a>
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">©2017 Zidian Lyu</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

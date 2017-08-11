@@ -1,0 +1,87 @@
+.jumbotron {
+    min-height: 90%;
+}
+
+.survey-header h2 {
+    font-family: 'Nunito';
+    text-align: center;
+}
+
+.survey-seq {
+    font-family: 'Varela Round', sans-serif;
+    text-align: right;
+    font-size: 20px;
+}
+
+.survey-seq .seq-numo {
+    margin: 0 8px 0 0;
+    color: #d31e17;
+    font-size: 40px;
+}
+
+.survey-seq .seq-demo {
+    margin: 0 0 0 10px;
+}
+
+.survey-context {
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid #ddd;
+}
+
+.survey-context h2 {
+    font-family: 'Nunito';
+    text-align: center;
+}
+
+.before-select {
+    width: 100%;
+    font-size: 28px;
+    padding: 10px 0 10px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.before-select:hover {
+    background: rgba(255, 206, 86, 0.2);
+}
+
+.after-select {
+    background: rgba(75, 192, 192, 0.2);
+    padding: 10px 0 10px 10px;
+    border-radius: 5px;
+}
+
+#survey-form .radio label input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    position: static !important;
+}
+
+.answer-text {
+    margin: 0 0 0 15px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+}
+
+.submit-answer {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+}
+
+.submit-answer button {
+    width: 155px;
+}
+
+.submit-decision {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+}
+
+.submit-decision a {
+    width: 155px;
+}

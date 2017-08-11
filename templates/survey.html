@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="jumbotron survey-body">
+    <div class="survey-header">
+        <a href="/summary" class="btn btn-primary btn-lg summary-option-button summary-button">Report</a>
+        <h2>Customer Survey</h2>
+        <div class="survey-seq"><span class="seq-numo">{{seq[0]}}</span>/<span class="seq-demo">{{seq[-1]}}</span></div>
+    </div>
+    <div class="survey-context">
+        <h2>{{qst.question}}</h2>
+        <div class="survey-form">
+            <span class="fa fa-arrow-right show-right-lg hide"></span>
+            <form id="survey-form" action="/survey" method="post">
+                {% for answer in ans %}
+                <input type="hidden" name="question_id" value="{{answer.question_id}}" />
+                <input type="hidden" name="count" value="{{answer.count}}" />
+                <input type="hidden" name="question" value="{{qst.question}}" />
+                <div class="radio">
+                    <label class="before-select">
+                        <input id="answer-choice" type="radio" name="answer" value="{{answer.answer}}"/>
+                        <div class="answer-text">{{answer.answer}}</div>
+                    </label>
+                </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+    <div class="hide data-chart">
+        <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+    <div class="submit-answer">
+        <button class="btn btn-primary btn-lg transition-button-focus" type="button" name="button">Submit</button>
+    </div>
+    {% if repeat %}
+    <div class="submit-decision">
+        <a href="/summary" class="btn btn-success btn-lg summary-option-button">Finish</a>
+    </div>
+    {% else %}
+    <div class="submit-decision">
+        <a href="/survey" class="btn btn-primary btn-lg transition-button-focus">Next</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
