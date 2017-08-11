@@ -94,7 +94,7 @@ answers = {
     }
 }
 
-answered = [1, 2, 3]
+answered = list(range(1, len(questions) + 1, 1))
 repeat = False
 active = {}
 total_survey_answer = 0
@@ -265,7 +265,7 @@ def show_survey():
         answered.remove(num)
         # refill the answered list
         if not answered:
-            answered = [1, 2, 3]
+            answered = list(range(1, len(questions) + 1, 1))
             repeat = True
         else:
             repeat = False
@@ -308,7 +308,4 @@ def get_resource(path):
 
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    PORT = int(os.environ.get("PORT", 8000))
-    DEBUG = "NO_DEBUG" not in os.environ
-    app.run(debug=DEBUG, host="0.0.0.0", port=PORT)
+    app.run(debug=False)
