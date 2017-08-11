@@ -273,7 +273,7 @@ def show_survey():
         ans = Answer().get(num)
     else:
         if 'restart' in request.form:
-            answered = range(1, len(questions) + 1)
+            answered = list(range(1, len(questions) + 1, 1))
             return jsonify({'answered': answered})
         else:
             answer = request.form.getlist('answer')[0]
