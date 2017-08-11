@@ -4,6 +4,7 @@ import json
 import copy
 import pprint
 import pdb
+from functools import reduce
 from flask import Flask, request, render_template, Response, jsonify
 from flask_restful import Resource, Api
 
@@ -277,7 +278,7 @@ def show_survey():
         answered.remove(num)
         # refill the answered list
         if not answered:
-            answered.extend(range(1, len(questions) + 1))
+            answered = copy.deepcopy(range(1, len(questions) + 1))
             repeat = True
         else:
             repeat = False
@@ -287,7 +288,6 @@ def show_survey():
         if 'restart' in request.form:
             answered = range(1, len(questions) + 1)
             return jsonify({'answered': answered})
-        # pdb.set_trace()
         else:
             answer = request.form.getlist('answer')[0]
             count = request.form.getlist('count')[0]
