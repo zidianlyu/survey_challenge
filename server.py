@@ -2,8 +2,6 @@ import os
 import random
 import json
 import copy
-import pprint
-import pdb
 from functools import reduce
 from flask import Flask, request, render_template, Response, jsonify
 from flask_restful import Resource, Api
@@ -12,7 +10,6 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-# question_id_serial = 2
 
 # define type of question that can be asked
 question_id_serial = 3
@@ -128,8 +125,6 @@ class Answer(Resource):
         del answers[answer_id]
         return values
 
-# return all answers
-
 
 class Answers(Resource):
     def get(self):
@@ -148,10 +143,6 @@ class Answers(Resource):
 
         answers[answer_id_serial] = values
         return values
-
-# Define the Question class
-
-# return single question
 
 
 class Question(Resource):
@@ -176,8 +167,6 @@ class Question(Resource):
         ) if ans['question_id'] == question_id]
         return values
 
-# return all questions
-
 
 class Questions(Resource):
     def get(self):
@@ -199,8 +188,6 @@ class Questions(Resource):
         }
         questions[question_id_serial] = values
         return values
-
-# api = Api(app)
 
 
 api.add_resource(Questions, '/questions')
@@ -251,7 +238,6 @@ def show_about():
 def show_summary():
     global total_survey_answer
     global chart_nums
-    # pprint.PrettyPrinter(indent=4).pprint(answers.values())
     if request.method == 'POST':
         all_data = {}
         for qst in questions.values():
@@ -259,7 +245,6 @@ def show_summary():
             obj['title'] = qst['question']
             obj['detail'] = copy.deepcopy(filter(lambda x: x['question_id'] == qst['id'], answers.values()))
             all_data[qst['id']] = obj
-        # pprint.PrettyPrinter(indent=4).pprint(all_data)
         return jsonify({'all_data' : all_data})
     chart_nums = range(1, len(questions) + 1)
     total_survey_answer = reduce(lambda x, y: x + y, map(lambda x: x['count'], answers.values()))
@@ -302,14 +287,10 @@ def show_survey():
 
             result = copy.deepcopy(filter(lambda x: x['answer'] == answer, answers.values())[0])
             results = copy.deepcopy(filter(lambda x: x['question_id'] == int(question_id), answers.values()))
-            # pdb.set_trace()
             for el in results:
                 del el['question_id']
-        # pprint.PrettyPrinter(indent=4).pprint(answers.values())
-        # pdb.set_trace()
             return jsonify({'count': result['count'], 'question_id': result['question_id'], 'answer': result['answer'], 'results': results, 'question': question});
 
-    # pdb.set_trace()
     active.clear()
     return render_template('survey.html', qst=qst, ans=ans, repeat=repeat, seq=seq, active=active)
 
