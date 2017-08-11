@@ -7,6 +7,22 @@
     background: rgba(255, 255, 255, 0.4);
 }
 
+@media(max-width: 990px) {
+    .about-page-header p{
+        display: none !important;
+    }
+    .about-page-header::after {
+        content: "Please expand the screen";
+        background-color: #d31e17;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 30px;
+        font-weight: 100;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
 .about-page-header h2 {
     margin: 40px auto 20px !important;
     font-size: 50px !important;
