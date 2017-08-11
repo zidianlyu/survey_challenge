@@ -263,7 +263,7 @@ def show_survey():
         answered.remove(num)
         # refill the answered list
         if not answered:
-            answered = copy.deepcopy(range(1, len(questions) + 1))
+            answered = list(copy.deepcopy(range(1, len(questions) + 1)))
             repeat = True
         else:
             repeat = False
