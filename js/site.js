@@ -20,6 +20,16 @@ $j(function() {
         });
     });
 
+    $j('#report').click(function() {
+        $j.ajax({
+            url: '/summary',
+            type: 'POST',
+            data: 'report',
+            success: function(response) {},
+            error: function(error) {}
+        });
+    });
+
     $j('.survey-start').click(function() {
         $j.ajax({
             url: '/survey',

@@ -44,7 +44,6 @@ function generateSummaryChart(num, question, details) {
         data: {
             labels: names,
             datasets: [{
-                label: 'Survey Results',
                 data: counts,
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
@@ -57,21 +56,22 @@ function generateSummaryChart(num, question, details) {
             title: {
                 display: true,
                 text: question,
-                fontSize: 45,
-                fontFamily: 'Nunito'
+                fontSize: 25,
+                fontStyle: '400',
+                fontFamily: "Helvetica Neue"
             },
 
             // top below the title
             legend: {
                 labels: {
-                    fontSize: 35
+                    fontSize: 20
                 }
             },
             //pop up box
             tooltips: {
                 enabled: true,
-                titleFontSize: 35,
-                bodyFontSize: 30
+                titleFontSize: 25,
+                bodyFontSize: 20
             }
         },
         animation:{

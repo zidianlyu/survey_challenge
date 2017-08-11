@@ -94,7 +94,7 @@ answers = {
     }
 }
 
-answered = list(range(1, len(questions) + 1))
+answered = list(range(1, len(questions) + 1, 1))
 repeat = False
 active = {}
 total_survey_answer = 0
@@ -105,12 +105,10 @@ chart_nums = 0
 
 class Answer(Resource):
     def get(self, question_id):
-        # pdb.set_trace()
         res = []
         for el in answers.values():
             if el['question_id'] == question_id:
                 res.append(el)
-        # pdb.set_trace()
         return res
 
     def put(self, answer_id):
@@ -238,7 +236,11 @@ def show_about():
 def show_summary():
     global total_survey_answer
     global chart_nums
+    global active
     if request.method == 'POST':
+        if 'report' in request.form:
+            active.clear()
+            active['report'] = True
         all_data = {}
         for qst in questions.values():
             obj = {}
@@ -281,7 +283,6 @@ def show_survey():
 
             for el in answers.values():
                 if str(el['question_id']) == question_id and el['answer'] == answer:
-                    # pdb.set_trace()
                     el['count'] += 1
                     break
 

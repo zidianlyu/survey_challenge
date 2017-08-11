@@ -85,8 +85,9 @@ function generateGraph(results, question) {
             title: {
                 display: true,
                 text: question,
-                fontSize: 45,
-                fontFamily: 'Nunito'
+                fontSize: 35,
+                fontStyle: '400',
+                fontFamily: 'Helvetica Neue'
             },
             hover: {
                 onHover: function(e, el) {
@@ -101,14 +102,14 @@ function generateGraph(results, question) {
             legend: {
                 display: true,
                 labels: {
-                    fontSize: 35
+                    fontSize: 25
                 }
             },
             //pop up box
             tooltips: {
                 enabled: true,
-                titleFontSize: 35,
-                bodyFontSize: 30
+                titleFontSize: 25,
+                bodyFontSize: 20
             }
         }
     });
