@@ -1,3 +1,4 @@
+import pdb
 import os
 import random
 import json
@@ -284,13 +285,23 @@ def show_survey():
             for el in answers.values():
                 if str(el['question_id']) == question_id and el['answer'] == answer:
                     el['count'] += 1
+                    count = el['count']
                     break
 
-            result = copy.deepcopy(filter(lambda x: x['answer'] == answer, answers.values())[0])
-            results = copy.deepcopy(filter(lambda x: x['question_id'] == int(question_id), answers.values()))
-            for el in results:
-                del el['question_id']
-            return jsonify({'count': result['count'], 'question_id': result['question_id'], 'answer': result['answer'], 'results': results, 'question': question});
+            # result = copy.deepcopy(filter(lambda x: x['answer'] == answer, answers.values())[0])
+            results = []
+            # results = copy.deepcopy(filter(lambda x: x['question_id'] == int(question_id), answers.values()))
+            for el in answers.values():
+                if el['question_id'] == int(question_id):
+                    # del el['question_id']
+                    # del el['id']
+                    results.append(el);
+
+            # pdb.set_trace()
+            # for el in results:
+            #     del el['question_id']
+            # return jsonify({'count': result['count'], 'question_id': result['question_id'], 'answer': result['answer'], 'results': results, 'question': question});
+            return jsonify({'count': count, 'question_id': question_id, 'answer': answer, 'results': results, 'question': question});
 
     active.clear()
     return render_template('survey.html', qst=qst, ans=ans, repeat=repeat, seq=seq, active=active)
