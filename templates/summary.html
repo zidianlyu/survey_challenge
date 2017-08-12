@@ -5,7 +5,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Tesla_Motors_Logo.svg" width="400">
         <h1>Survey Analysis</h1>
         <p>Here are the summaries:</p>
-        <p>We collected <span class="total-survey-answer">{{total_survey_answer}}</span> survey results from <span class="total-survey-answer">{{question_nums}}</span> questions</p>
+        <p class="summary-text">We collected <span class="total-survey-answer">{{total_survey_answer}}</span> survey results from <span class="total-survey-question">{{question_nums}}</span> questions</p>
         {% for i in chart_nums %}
         <div class="hide summary-chart">
             <canvas id="summaryChart{{i}}" width="200" height="200"></canvas>

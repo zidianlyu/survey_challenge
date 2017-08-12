@@ -2,9 +2,8 @@
     min-height: 90%;
 }
 
-.survey-header h2 {
-    font-family: 'Nunito';
-    text-align: center;
+.survey-header h1 {
+    font-size: 43px;
 }
 
 .survey-seq {
@@ -24,15 +23,20 @@
 }
 
 .survey-context {
+    width: 640px;
+    margin: 0 auto;
     padding: 15px;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.05);
-    border: 2px solid #ddd;
+    background: #fff;
+    box-shadow: 0 3px 12px #ddd;
 }
 
 .survey-context h2 {
-    font-family: 'Nunito';
     text-align: center;
+    font-weight: 300;
+    padding: 14px 20px;
+    margin: 5px 0 20px;
+    font-size: 26px !important;
 }
 
 .before-select {
@@ -62,8 +66,8 @@
 
 .answer-text {
     margin: 0 0 0 15px;
-    font-family: 'Varela Round', sans-serif;
     font-size: 20px;
+    font-weight: 200;
 }
 
 .submit-answer {
