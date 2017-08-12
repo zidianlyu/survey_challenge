@@ -1,4 +1,3 @@
-import pdb
 import os
 import random
 import json
@@ -147,7 +146,8 @@ class Answers(Resource):
 class Question(Resource):
     def get(self, question_id):
         data = questions[question_id].copy()
-        data['answers'] = [ans for ans in answers.values() if ans['question_id'] == question_id]
+        data['answers'] = [ans for ans in answers.values(
+        ) if ans['question_id'] == question_id]
         return data
 
     def put(self, question_id):
@@ -156,7 +156,8 @@ class Question(Resource):
         data.pop('answers', [])
         values = {k: data.get(k, v) for k, v in question.items()}
         questions[question_id].update(values)
-        values['answers'] = [ans for ans in answers.values() if ans['question_id'] == question_id]
+        values['answers'] = [ans for ans in answers.values(
+        ) if ans['question_id'] == question_id]
         return values
 
     def delete(self, question_id):
@@ -205,6 +206,7 @@ def show_root():
     active['home'] = True
     return render_template('home.html', active=active, total_survey_answer=total_survey_answer)
 
+
 @app.route('/home', methods=['GET', 'POST'])
 def show_home():
     global active
@@ -215,16 +217,18 @@ def show_home():
             active.clear()
             active['reset'] = True
             for el in answers.values():
-                el['count'] = 0;
-            return jsonify({'answers' : answers})
+                el['count'] = 0
+            return jsonify({'answers': answers})
         elif 'add' in request.form:
             active.clear()
             active['add'] = True
             for el in answers.values():
-                el['count'] += random.randint(1, 9);
-            return jsonify({'answers' : answers})
-    total_survey_answer = reduce(lambda x, y: x + y, map(lambda x: x['count'], answers.values()))
+                el['count'] += random.randint(1, 9)
+            return jsonify({'answers': answers})
+    total_survey_answer = reduce(
+        lambda x, y: x + y, map(lambda x: x['count'], answers.values()))
     return render_template('home.html', active=active, total_survey_answer=total_survey_answer)
+
 
 @app.route('/about')
 def show_about():
@@ -232,6 +236,7 @@ def show_about():
     active.clear()
     active['about'] = True
     return render_template('about.html', active=active)
+
 
 @app.route('/summary', methods=['GET', 'POST'])
 def show_summary():
@@ -246,11 +251,17 @@ def show_summary():
         for qst in questions.values():
             obj = {}
             obj['title'] = qst['question']
-            obj['detail'] = copy.deepcopy(filter(lambda x: x['question_id'] == qst['id'], answers.values()))
+            arr = []
+            for el in answers.values():
+                if el['question_id'] == qst['id']:
+                    arr.append(el)
+            obj['detail'] = arr
+            copy.deepcopy(filter(lambda x: x, answers.values()))
             all_data[qst['id']] = obj
-        return jsonify({'all_data' : all_data})
+        return jsonify({'all_data': all_data})
     chart_nums = range(1, len(questions) + 1)
-    total_survey_answer = reduce(lambda x, y: x + y, map(lambda x: x['count'], answers.values()))
+    total_survey_answer = reduce(
+        lambda x, y: x + y, map(lambda x: x['count'], answers.values()))
     return render_template('summary.html', chart_nums=chart_nums, total_survey_answer=total_survey_answer, active=active, question_nums=len(chart_nums))
 
 
@@ -261,7 +272,8 @@ def show_survey():
     global question_id
     global answered
     if request.method == 'GET':
-        seq = '%s / %s' % ((len(questions) - len(answered) + 1), len(questions))
+        seq = '%s / %s' % ((len(questions) -
+                            len(answered) + 1), len(questions))
         num = random.choice(answered)
         answered.remove(num)
         # refill the answered list
@@ -288,19 +300,11 @@ def show_survey():
                     count = el['count']
                     break
 
-            # result = copy.deepcopy(filter(lambda x: x['answer'] == answer, answers.values())[0])
             results = []
-            # results = copy.deepcopy(filter(lambda x: x['question_id'] == int(question_id), answers.values()))
             for el in answers.values():
                 if el['question_id'] == int(question_id):
-                    # del el['question_id']
-                    # del el['id']
-                    results.append(el);
+                    results.append(el)
 
-            # pdb.set_trace()
-            # for el in results:
-            #     del el['question_id']
-            # return jsonify({'count': result['count'], 'question_id': result['question_id'], 'answer': result['answer'], 'results': results, 'question': question});
             return jsonify({'count': count, 'question_id': question_id, 'answer': answer, 'results': results, 'question': question});
 
     active.clear()
