@@ -7,7 +7,7 @@
     background: rgba(255, 255, 255, 0.4);
 }
 
-@media(max-width: 990px) {
+@media(max-width: 1000px) {
     .about-page-header p{
         display: none !important;
     }
