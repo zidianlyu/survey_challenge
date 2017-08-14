@@ -1,3 +1,9 @@
+@media (min-width: 1200px) {
+    .container {
+        width: 970px !important;
+    }
+}
+
 .operations {
     width: 70%;
     margin: 0 auto;
@@ -73,19 +79,14 @@
     text-align: center;
 }
 
-.summary-text span {}
-
 .total-survey-answer {
-    font-family: 'Varela Round', sans-serif !important;
-    font-size: 18px;
-    background-color: #d31e17;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
+    font-size: 45px;
+    color: #d31e17;
+    font-weight: 300;
     min-width: 30px;
     display: inline-block;
     line-height: normal;
-    vertical-align: super;
+    vertical-align: baseline;
 }
 
 .total-survey-question {

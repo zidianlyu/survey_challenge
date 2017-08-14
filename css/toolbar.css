@@ -1,0 +1,333 @@
+/*Toolbar reset*/
+
+.toolbar-right * {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: 300;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.toolbar-right a, img {
+    border: 0;
+    text-decoration: none;
+}
+
+.toolbar-right p {
+    margin: 0px;
+    padding: 0px;
+    line-height: 20px;
+}
+
+.toolbar-right i {
+    margin: 0px;
+    padding: 0px;
+    font-style: normal;
+}
+
+.toolbar-right ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.toolbar-right ul li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.toolbar-right a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.toolbar-right a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*content*/
+
+.toolbar-right {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    margin-top: -100px;
+    z-index: 100;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.toolbar-right-menu {
+    position: relative;
+}
+
+.toolbar-right-btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd !important;
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toolbar-right-btn span {
+    color: #848484;
+    font-size: 26px;
+    line-height: 48px;
+}
+
+.toolbar-right-btn sup {
+    display: block;
+    min-width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #d31e17;
+    position: absolute;
+    left: -12px;
+    top: -12px;
+}
+
+.toolbar-right-btn p {
+    color: #d31e17;
+    font-size: 14px;
+    line-height: 12px;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.toolbar-right-menu:hover .toolbar-right-btn span {
+    display: none;
+}
+
+.toolbar-right-menu:hover .toolbar-right-btn p {
+    background-color: #d31e17;
+    border: 1px solid #d31e17 !important;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*menu summary*/
+
+.menu-summary .toolbar-right-btn {
+    border-color: #d31e17;
+    background: url(/css/img/tesla-lg.png) no-repeat center;
+    background-size: 48px 48px;
+    border: 0 !important;
+}
+
+.menu-summary .toolbar-right-btn p {
+    color: #fff;
+}
+
+.menu-summary .toolbar-right-btn span {
+    color: #fff;
+}
+
+
+/*menu add*/
+
+.menu-data-add .toolbar-right-btn {
+    border-color: #d31e17;
+    background: url(/css/img/add.png) no-repeat center;
+    background-size: 96px 96px;
+}
+
+
+/*menu reset*/
+
+.menu-data-reset .toolbar-right-btn {
+    border-color: #d31e17;
+    background: url(/css/img/reset.png) no-repeat center;
+    background-size: 96px 96px;
+}
+
+
+/*menu survey*/
+
+.menu-survey .toolbar-right-btn {
+    border-color: #d31e17;
+    background: url(/css/img/survey.png) no-repeat center;
+    background-size: 96px 96px;
+}
+
+
+/*menu to*/
+
+.menu-to .toolbar-right-btn span {
+    font-size: 23px;
+    line-height: 12px;
+    padding-top: 10px;
+    display: block
+}
+
+.menu-to .toolbar-right-btn i {
+    display: block;
+    color: #999;
+    font-size: 14px;
+}
+
+.menu-to.toolbar-right-menu:hover .toolbar-right-btn {
+    background-color: #d31e17;
+}
+
+.menu-to.toolbar-right-menu:hover .toolbar-right-btn span {
+    display: block;
+    color: #fff;
+}
+
+.menu-to.toolbar-right-menu:hover .toolbar-right-btn i {
+    color: #fff;
+}
+
+
+/*when hover, the box that on the left*/
+
+.toolbar-right-box {
+    position: absolute;
+    top: -15px;
+    right: 48px;
+    padding-right: 25px;
+    display: none;
+}
+
+.toolbar-right-box .box-border {
+    border: 1px solid #ccc;
+    border-top: 4px solid #d31e17;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+    position: relative
+}
+
+.toolbar-right-box .box-border .arrow-right {
+    display: block;
+    color: #ccc;
+    position: absolute;
+    right: -9px;
+    top: 26px;
+}
+
+
+/*toolbar-box default*/
+
+.toolbar-right-box .box-border .toolbar-hover-box-title span {
+    font-size: 42px;
+    float: left;
+    display: block;
+    line-height: 56px;
+    margin-right: 20px;
+    color: #d3d3d3
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-title p {
+    float: left;
+    color: #d31e17;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-title p i {
+    display: block;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #e4e4e4
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body h4 {
+    color: #666;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body li {
+    color: #999;
+    padding: 0 0 0 60px;
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body li a {
+    display: inline-block;
+    color: #999;
+    font-size: 13px;
+    padding-left: 43px;
+    line-height: 36px;
+}
+
+.toolbar-right-box .box-border .toolbar-hover-box-body li a:hover {
+    color: #d31e17
+}
+
+.menu-summary .toolbar-right-box .box-border {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*menu-data-operation box*/
+
+.menu-data-operation .toolbar-right-box .box-border {
+    width: 386px;
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar-right-menu:hover .toolbar-right-box {
+    display: block
+}
+
+
+/*menu survey*/
+
+.menu-survey .toolbar-right-box {
+    top: inherit;
+    bottom: -43px;
+}
+
+.menu-survey .toolbar-right-box .box-border {
+    width: 285px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.menu-survey .toolbar-right-box .box-border p {
+    text-align: left;
+}
+
+
+/*menu summary*/
+
+.menu-summary .toolbar-right-btn .demo-icon {
+    display: none;
+}
+
+.menu-summary:hover .toolbar-right-btn {
+    background: #d31e17
+}

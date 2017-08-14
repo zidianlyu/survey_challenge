@@ -3,30 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title>Tesla</title>
-    <link rel="shortcut icon" href="https://png.icons8.com/tesla/color/24">
+    <link rel="shortcut icon" href="../css/img/tesla.ico">
     <!-- load dependency styles -->
-
     <!-- load site styles -->
-    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="/css/site.css" />
     <!-- load external library -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/ext/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/ext/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/ext/fakeLoader.css" />
 </head>
 
 <body>
+    <div id="fakeLoader"></div>
     {% include 'includes/navbar.html'%}
     <div class="container">
         {% block body %}{% endblock %}
     </div>
 
+    {% include 'includes/toolbar.html'%}
+
     <!-- load external scripts -->
     <!-- load site scripts -->
-    <script src="/assets/js/ext/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="/assets/js/ext/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/assets/js/ext/Chart.min.js" type="text/javascript"></script>
-    <script src="/assets/js/survey.js" type="text/javascript"></script>
-    <script src="/assets/js/summary.js" type="text/javascript"></script>
-    <script src="/assets/js/site.js" type="text/javascript"></script>
+    <script src="/js/ext/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="/js/ext/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/ext/jquery.animateNumber.js" type="text/javascript"></script>
+    <script src="/js/ext/fakeLoader.js" type="text/javascript"></script>
+    <script src="/js/ext/Chart.min.js" type="text/javascript"></script>
+    <script src="/js/survey.js" type="text/javascript"></script>
+    <script src="/js/summary.js" type="text/javascript"></script>
+    <script src="/js/site.js" type="text/javascript"></script>
+    <script src="/js/home.js" type="text/javascript"></script>
+    <script src="/js/toolbar.js" type="text/javascript"></script>
+    <script src="/js/loader.js" type="text/javascript"></script>
 </body>
 
 </html>

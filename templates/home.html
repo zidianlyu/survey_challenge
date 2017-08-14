@@ -1,10 +1,10 @@
 {% extends 'index.html' %} {% block body %}
 <div class="jumbotron text-center">
-    <img src="https://png.icons8.com/tesla/color/96" title="Tesla" width="96" height="96">
+    <img src="../css/img/tesla-lg.png" title="Tesla" width="96" height="96">
     <h1>Tesla Survey</h1>
     <p>Please answer some questions</p>
     <div>
-        <p>We have <span class="total-survey-answer">{{total_survey_answer}}</span> suvery answers now</p>
+        <p>We collected <span class="total-survey-answer">{{total_survey_answer}}</span> suvery answers</p>
     </div>
     <div class="operations">
         <div id="reportTips">
@@ -23,7 +23,7 @@
         <span class="toten">or</span>
         <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
-    <a href="/survey" class="btn btn-primary btn-lg survey-start transition-button-focus">Start</a>
+    <a id="start-survey" href="/survey" class="btn btn-primary btn-lg transition-button-focus survey-start">Start</a>
     <div class="footer">
         <div class="container">
             <p class="text-muted">©2017 Zidian Lyu</p>

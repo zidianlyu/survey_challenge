@@ -57,21 +57,22 @@ function generateSummaryChart(num, question, details) {
                 display: true,
                 text: question,
                 fontSize: 25,
-                fontStyle: '400',
-                fontFamily: "Helvetica Neue"
+                fontStyle: '300',
+                fontFamily: "Helvetica Neue",
+                fontColor: '#d31e17'
             },
 
             // top below the title
             legend: {
                 labels: {
-                    fontSize: 20
+                    fontSize: 13
                 }
             },
             //pop up box
             tooltips: {
                 enabled: true,
-                titleFontSize: 25,
-                bodyFontSize: 20
+                titleFontSize: 20,
+                bodyFontSize: 15
             }
         },
         animation:{

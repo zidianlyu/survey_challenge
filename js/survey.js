@@ -9,7 +9,6 @@ $j(function() {
         var selected = $j('input[name="answer"]:checked').val()
         $j(`.radio label`).removeClass('after-select');
         $j(`input[value="${selected}"]`).parent().addClass('after-select');
-
     });
 
     $j('.submit-decision').click(function() {
@@ -30,8 +29,7 @@ $j(function() {
                 $j('.data-chart').removeClass('hide');
                 generateGraph(response.results, response.question);
             },
-            error: function(error) {
-            }
+            error: function(error) {}
         });
         $j('.submit-decision').show();
     });
@@ -72,12 +70,14 @@ function generateGraph(results, question) {
                         min: 0,
                         max: Math.max.apply(Number, counts) + 1,
                         stepSize: 1,
+                        fontStyle: '200',
                         fontSize: 25
                     }
                 }],
                 xAxes: [{
                     ticks: {
-                        fontSize: 35
+                        fontSize: 35,
+                        fontStyle: '300'
                     }
                 }]
             },
@@ -85,8 +85,9 @@ function generateGraph(results, question) {
             title: {
                 display: true,
                 text: question,
-                fontSize: 35,
+                fontSize: 40,
                 fontStyle: '400',
+                fontColor: '#d31e17',
                 fontFamily: 'Helvetica Neue'
             },
             hover: {

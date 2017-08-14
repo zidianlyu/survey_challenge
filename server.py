@@ -2,8 +2,9 @@ import os
 import random
 import json
 import copy
+import pdb
 from functools import reduce
-from flask import Flask, request, render_template, Response, jsonify
+from flask import Flask, request, render_template, Response, jsonify, send_from_directory
 from flask_restful import Resource, Api
 
 # create the app object
@@ -211,6 +212,7 @@ def show_root():
 def show_home():
     global active
     global total_survey_answer
+    # pdb.set_trace();
     if request.method == 'POST':
         """for the add and reset button"""
         if 'reset' in request.form:
@@ -310,17 +312,17 @@ def show_survey():
     active.clear()
     return render_template('survey.html', qst=qst, ans=ans, repeat=repeat, seq=seq, active=active)
 
+@app.route('/js/<path:path>')
+def get_js(path):
+    return send_from_directory('js', path)
 
-@app.route('/assets/<path:path>')
-def get_resource(path):
-    mimetypes = {
-        '.css': 'text/css',
-        '.html': 'text/html',
-        '.js': 'application/javascript'
-    }
-    content = open(path).read()
-    return Response(content, mimetype=mimetypes[os.path.splitext(path)[1]])
+@app.route('/css/<path:path>')
+def get_css(path):
+    return send_from_directory('css', path)
 
+@app.route('/html/<path:path>')
+def get_html(path):
+    return send_from_directory('html', path)
 
 if __name__ == '__main__':
     # app.run(debug=False)

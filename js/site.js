@@ -1,5 +1,5 @@
 var $j = jQuery.noConflict();
-$j(function() {
+$j(document).ready(function() {
     $j('#reset').click(function() {
         $j.ajax({
             url: '/home',
@@ -30,7 +30,7 @@ $j(function() {
         });
     });
 
-    $j('.survey-start').click(function() {
+    $j('#start-survey').click(function() {
         $j.ajax({
             url: '/survey',
             type: 'POST',
