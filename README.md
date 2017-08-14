@@ -17,9 +17,7 @@ python server.py
 
 1. The website will randomly draw a question from backend for the user to answer. The UI will displace the question with all the possible options.
 
-- picture
-
-  ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png)
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png" align="center" width="200" overflow="hidden">
 
 2. The backend will interact with the user and update the count of answer selected in the backend.
 
