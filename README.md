@@ -197,35 +197,28 @@ The project is compatible with both Python 2.7.13 and Python 3.6.2
 
 ## Reference and citations
 
-![chartjs][chartjs-site]
+[chartjs](http://www.chartjs.org/)
 
-![bootstrap][bootstrap-site]
+[bootstrap](http://getbootstrap.com/)
 
-![fakeLoader][fakeLoader-site]
+[fakeLoader](http://joaopereirawd.github.io/fakeLoader.js/)
 
-![fontawesome][fontawesome-site]
+[fontawesome](http://fontawesome.io/)
 
-![Tesla Logo][Tesla-logo-site]
+[Tesla Logo](https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg)
 
-![Tesla T Symbol][Tesla-T-Symbol-site]
-
-[chartjs-site]: (http://www.chartjs.org/)
-[bootstrap-site]: (http://getbootstrap.com/)
-[fakeLoader-site]: (http://joaopereirawd.github.io/fakeLoader.js/)
-[fontawesome-site]: (http://fontawesome.io/)
-[Tesla-logo-site]: (https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg)
-[Tesla-T-Symbol-site]: (https://commons.wikimedia.org/wiki/File:Tesla_Motors.svg)
+[Tesla T Symbol](https://commons.wikimedia.org/wiki/File:Tesla_Motors.svg)
 
 ## Appendix 1: Requests design flow chart
 
-    - Requests
+- Requests design flow chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/Requests_flow_chart%20.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/Requests_flow_chart%20.png" align="center" width="400" overflow="hidden">
 
 ## Appendix 2: UI design flow chart
 
-    - UI
+- UI design flow chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/UI_design_flow_chart.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/UI_design_flow_chart.png" align="center" width="400" overflow="hidden">
 
 [survey]: https://surveychallenge.herokuapp.com/
