@@ -4,6 +4,10 @@ This is an functional app for survey purpose built in Python Flask and jQuery.
 
 [LIVE][survey]
 
+Author: Zidian Lyu
+Time: Aug-2017
+Create to: Tesla, Inc
+
 ## The view of app
 
 - Home page
@@ -12,7 +16,7 @@ This is an functional app for survey purpose built in Python Flask and jQuery.
 
 ## Steps to run
 
-```
+```bash
 pip install -r requirements.txt
 python server.py
 ```
@@ -73,7 +77,7 @@ python server.py
 
 #### Templates
 
-```
+```html
 index.html(/)
     - includes
         - navbar.html
@@ -86,7 +90,7 @@ index.html(/)
 
 #### Styling
 
-```
+```html
 index.html(root)
     - <head>
         - css/site.css
@@ -98,7 +102,7 @@ index.html(root)
 
 #### Javascript
 
-```
+```Javascript
 index.html(root)
     - <body>
         - js/site scripts
@@ -153,7 +157,6 @@ def get_resource(path):
 
     content = open(path).read()
     return Response(content, mimetype=mimetypes[os.path.splitext(path)[1]])
-
 ```
 
 To
@@ -190,7 +193,7 @@ def get_html(path):
 
 ##### The project is tested to be deployable on Heroku
 
-[Heroku]: (https://www.heroku.com)
+[Heroku](https://www.heroku.com)
 
 The project is compatible with both Python 2.7.13 and Python 3.6.2
 
