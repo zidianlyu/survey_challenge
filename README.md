@@ -43,9 +43,9 @@ python server.py
 
 1. User has right to **add random answers** or **clear all the answers** to the back end server.
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right1.png" align="center" width="300" height="150" overflow="hidden">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right1.png" align="center" width="300" height="110" overflow="hidden">
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right2.png" align="center" width="300" height="150" overflow="hidden">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right2.png" align="center" width="300" height="110" overflow="hidden">
 
 2. **Page guidance**, the user can follow the _yellow arrow_ to try each functional feature.
 
