@@ -6,6 +6,8 @@ This is an functional app for survey purpose built in Python Flask and jQuery.
 
 ## The view of app
 
+    - Home page
+
     <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/fullview.png" align="center">
 
 ## Steps to run
@@ -45,7 +47,11 @@ python server.py
 
 3. **Data visualization**, the user can view the statistic for each question in a _bar chart_ after each submit, and view all the data statistic in some _doughnut charts_ after the user finish the set of questions.
 
+    - Bar chart
+
     <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/barchart.png" align="center">
+
+    - Doughnut chart
 
     <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/doughnutchart.png" align="center">
 
@@ -203,18 +209,22 @@ The project is compatible with both Python 2.7.13 and Python 3.6.2
 
 ![Tesla T Symbol][Tesla-T-Symbol-site]
 
-[chartjs-site]: http://www.chartjs.org/
-[bootstrap-site]: http://getbootstrap.com/
-[fakeLoader-site]: http://joaopereirawd.github.io/fakeLoader.js/
-[fontawesome-site]: http://fontawesome.io/
-[Tesla-logo-site]: https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg
-[Tesla-T-Symbol-site]: https://commons.wikimedia.org/wiki/File:Tesla_Motors.svg
+[chartjs-site]: (http://www.chartjs.org/)
+[bootstrap-site]: (http://getbootstrap.com/)
+[fakeLoader-site]: (http://joaopereirawd.github.io/fakeLoader.js/)
+[fontawesome-site]: (http://fontawesome.io/)
+[Tesla-logo-site]: (https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg)
+[Tesla-T-Symbol-site]: (https://commons.wikimedia.org/wiki/File:Tesla_Motors.svg)
 
 ## Appendix 1: Requests design flow chart
+
+    - Requests
 
     <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/Requests_flow_chart%20.png" align="center">
 
 ## Appendix 2: UI design flow chart
+
+    - UI
 
     <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/UI_design_flow_chart.png" align="center">
 
