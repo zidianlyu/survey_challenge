@@ -17,17 +17,19 @@ python server.py
 
 1. The website will randomly draw a question from backend for the user to answer. The UI will displace the question with all the possible options.
 
-    ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png)
+- picture
+
+  ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png)
 
 2. The backend will interact with the user and update the count of answer selected in the backend.
 
 3. Right after an answered be submitted, the user can view the statistic of the answer chosen. And the UI will provide the user a choice to moving forward.
 
-    ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/forward.png)
+  ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/forward.png)
 
 4. When the user answered the whole set of questions once(without repetition), the user can choose or view all the collected data's statistic or continue to restart the answering question process.
 
-    ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/finish.png)
+  ![] (https://github.com/zidianlyu/survey_challenge/blob/master/docs/finish.png)
 
 ### Extra Features
 
