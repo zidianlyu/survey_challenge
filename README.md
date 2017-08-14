@@ -1,108 +1,193 @@
-Overview
-===============
+# Story Write Up
 
-This is the Tesla Toolbox front-end engineer take home challenge.  What we are looking for is your ability to deliver
-a web-page built on top of this simple python server.  We are using Flask to generate a basic server that has a few
-REST endpoints, and a single route to return the index page.
+This is an functional app for survey purpose built in Python Flask and jQuery.
 
-Basic Requirements
----------------
+[live]: https://surveychallenge.herokuapp.com/
 
-1. You should show a random question from the backend server for the user to answer.  This should show the questions
-   and the possible answers for someone to select.
+## Steps to run
 
-2. Once the user selects an answer, you should update the backend with the new count for the number of times an
-   answer has been selected.
+```
+pip install -r requirements.txt
+python server.py
+```
 
-3. After that, you should display the total number of times each answer has been given for this question and
-   prompt the user to perform another question.
+## Features
 
-4. If the user chooses to perform another, randomly provide them with a question which they have not yet seen. Continue
-   doing this until the user has answered each question once. If the user chooses to continue from there, deliver them a
-   random question and repeat until they have answered each twice, three times, etc.
+### MVP
 
-5. There are a few small issues with the back-end server, please correct any that you recognize and add a brief
-   comment indicating what the bug had previously been.
+1. The website will randomly draw a question from backend for the user to answer. The UI will displace the question with all the possible options.
+![question] (./docs/question.png)
 
-What we are looking for
----------------
+2. The backend will interact with the user and update the count of answer selected in the backend.
 
-From here, you have the freedom to choose how to implement the rest of the app.  For consideration for a front-end
-role, we are looking for a few things -- how you structure your javascript code, what libraries and frameworks you
-choose to use, and how you decide to display information to the end user.  To join our team in the front-end capacity,
-it is very important to keep in mind both the user and code maintainability / structure.
+3. Right after an answered be submitted, the user can view the statistic of the answer chosen. And the UI will provide the user a choice to moving forward.
+![forward] (./docs/forward.png)
 
-You may use any javascript and css libraries you wish, and may modify the server code however you like as well.
+4. When the user answered the whole set of questions once(without repetition), the user can choose or view all the collected data's statistic or continue to restart the answering question process.
+![finish] (./docs/finish.png)
 
-Getting Setup
-===============
+### Extra Features
 
-We recommend putting Python code into a virtual environment, however it is not a requirement.  If you do create a
-virtualenv, please do not include it with your submission back to us.
+1. User has right to **add random answers** or **clear all the answers** to the back end server. ![right1] (./docs/right1.png)
+![right2] (./docs/right2.png)
 
-To get started with what you need, you will simply need to be in the root directory of this package and run:
+2. **Page guidance**, the user can follow the _yellow arrow_ to try each functional feature.
 
-    pip install -r requirements.txt
-    python server.py
+3. **Data visualization**, the user can view the statistic for each question in a _bar chart_ after each submit, and view all the data statistic in some _doughnut charts_ after the user finish the set of questions.
+![barchart] (./docs/barchart.png)
+![doughnutchart] (./docs/doughnutchart.png)
 
-That should install the requried libraries for this project, and then start your web server.  If you run into trouble,
-please reference the documentation for:
+4. **A float site tool bar**, the user can easily access all the features mentioned above in the tool bar.
+![toolbar] (./docs/toolbar.png)
 
-* pip: https://docs.python.org/3.6/installing/index.html
-* flask: http://flask.pocoo.org/
+5. **Number animation**, the count for total answers will be display dynamically in the UI.
 
-Usage
-==============
+6. **Page loading effect**, a page loader was designed for smoothly render the transition of each page.
 
-We have provided a few basic routes to work with.  Once you have started the flask server, you can go to:
+7. **Sliding effect**, an effect under page guidance that gives users more responses.
+![slideeffect] (./docs/slideeffect.png)
 
-    http://127.0.0.1:5000/
+## Project Management
 
-This will render the file from the `templates/index.html` file to the web browser.  You can modify that file as you
-see fit to accomplish this task.
+### File Structure
 
-In addition to this HTTP we have setup the `questions` and `answers` resources.
+#### Templates
 
-    GET/POST            /questions
-    GET/PUT/DELETE      /questions/:id
-    
-    GET/POST            /answers
-    GEt/PUT/DELETE      /answers/:id
+```
+index.html(/)
+    - includes
+        - navbar.html
+        - toolbar.html
+    - home.html
+    - survey.html
+    - summary.html
+    - about.html
+```
 
-The /questions route will return a list of all available questions and their answers.  The `Question` object will contain
-the following fields:
+#### Styling
 
-    {
-        id: <int>,
-        question: <string>,
-        answers: [ <Answer Object>, .. ]
+```
+index.html(root)
+    - <head>
+        - css/site.css
+            - component1.css
+            - component2.css
+            ...
+        - css/ext/external_library.css
+```
+
+#### Javascript
+
+```
+index.html(root)
+    - <body>
+        - js/site scripts
+        - js/ext/external scripts
+```
+
+## Issues Fixed
+
+##### In the Back End, server.py
+
+1. Import extra library that I need to use
+```Python
+import random
+import json
+import copy
+from functools import reduce
+from flask import jsonify, send_from_directory
+```
+
+2. Change in Answer class
+```Python
+"""Change to get method to get multiple results rather than just getting a single result"""
+class Answer(Resource):
+    def get(self, question_id):
+        res = []
+        for el in answers.values():
+            if el['question_id'] == question_id:
+                res.append(el)
+        return res
+```
+
+3. When sending data in POST request, using jsonify to return key value pair object to Front end
+```Python
+return jsonify({'answers': answers})
+```
+
+4. Return supportive data object to Front End to build the visual chart
+```Python
+return render_template('summary.html', chart_nums=chart_nums, total_survey_answer=total_survey_answer, active=active, question_nums=len(chart_nums))
+```
+
+5. To specify the file path in the server and avoid file path reading errors
+
+```Python
+@app.route('/assets/<path:path>')
+def get_resource(path):
+    mimetypes = {
+        '.css': 'text/css',
+        '.html': 'text/html',
+        '.js': 'application/javascript'
     }
 
-And the `Answer` object will contain:
+    content = open(path).read()
+    return Response(content, mimetype=mimetypes[os.path.splitext(path)[1]])
 
-    {
-        id: <int>,
-        answer: <string>,
-        question_id: <int>
-        count: 0
-    }
+```
 
-You may add any more routes you wish, for this test we are using `flask-restful` as the middleware to generate the routes.
+To
+```Python
+@app.route('/js/<path:path>')
+def get_js(path):
+    return send_from_directory('js', path)
 
-Example Usage with jQuery (provided)
-===============
+@app.route('/css/<path:path>')
+def get_css(path):
+    return send_from_directory('css', path)
 
-    $.get('/questions', function (questions) { console.log(questions); });
-    
-    $.ajax({
-        method: 'put',
-        url: '/answers/1',
-        data: JSON.stringify({
-            count: 1
-        }),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function (answer) {
-            console.log(answer);
-        }
-    });
+@app.route('/html/<path:path>')
+def get_html(path):
+    return send_from_directory('html', path)
+```
+
+
+##### Modify external libraries, in index.html
+
+
+1. Remove those extra reference files, as they were not provided and I am not using it
+```HTML
+<script src="/assets/js/ext/underscore.js" type="text/javascript"></script>
+<script src="/assets/js/ext/backbone.js" type="text/javascript"></script>
+```
+
+2. Replace the provided jQuery library with a newer version
+```HTML
+<script src="/js/ext/jquery-3.2.1.min.js" type="text/javascript"></script>
+```
+
+## DevOps and Deployment
+
+##### The project is tested to be deployable on Heroku
+
+[Heroku]: https://www.heroku.com
+
+The project is compatible with both Python 2.7.13 and Python 3.6.2 
+
+
+## Reference and citations
+
+[chartjs]: http://www.chartjs.org/
+[bootstrap]: http://getbootstrap.com/
+[fakeLoader]: http://joaopereirawd.github.io/fakeLoader.js/
+[fontawesome]: http://fontawesome.io/
+[Tesla Logo]: https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg
+[Tesla T Symbol]: https://commons.wikimedia.org/wiki/File:Tesla_Motors.svg
+
+## Appendix 1: Requests design flow chart
+![Requests_flow_chart] (./docs/Requests_flow_chart.png)
+
+
+
+## Appendix 2: UI design flow chart
+![UI_design_flow_chart] (./docs/UI_design_flow_chart.png)
