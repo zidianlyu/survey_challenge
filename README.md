@@ -6,9 +6,9 @@ This is an functional app for survey purpose built in Python Flask and jQuery.
 
 ## The view of app
 
-    - Home page
+- Home page
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/fullview.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/fullview.png" align="center" width="600" overflow="hidden">
 
 ## Steps to run
 
@@ -23,7 +23,7 @@ python server.py
 
 1. The website will randomly draw a question from backend for the user to answer. The UI will displace the question with all the possible options.
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png" align="center" width="200" overflow="hidden">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/question.png" align="center" width="400" overflow="hidden">
 
 2. The backend will interact with the user and update the count of answer selected in the backend.
 
@@ -39,21 +39,21 @@ python server.py
 
 1. User has right to **add random answers** or **clear all the answers** to the back end server.
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right1.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right1.png" align="center" width="300" overflow="hidden">
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right2.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/right2.png" align="center" width="300" overflow="hidden">
 
 2. **Page guidance**, the user can follow the _yellow arrow_ to try each functional feature.
 
 3. **Data visualization**, the user can view the statistic for each question in a _bar chart_ after each submit, and view all the data statistic in some _doughnut charts_ after the user finish the set of questions.
 
-    - Bar chart
+- Bar chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/barchart.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/barchart.png" align="center" width="400" overflow="hidden">
 
-    - Doughnut chart
+- Doughnut chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/doughnutchart.png" align="center">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/doughnutchart.png" align="center" width="400" overflow="hidden">
 
 4. **A float site tool bar**, the user can easily access all the features mentioned above in the tool bar.
 
@@ -190,20 +190,20 @@ def get_html(path):
 
 ##### The project is tested to be deployable on Heroku
 
-[Heroku]: https://www.heroku.com
+[Heroku]: (https://www.heroku.com)
 
 The project is compatible with both Python 2.7.13 and Python 3.6.2
 
 
 ## Reference and citations
 
-[chartjs](http://www.chartjs.org/)
+[Bootstrap](http://getbootstrap.com/)
 
-[bootstrap](http://getbootstrap.com/)
+[Chartjs](http://www.chartjs.org/)
 
-[fakeLoader](http://joaopereirawd.github.io/fakeLoader.js/)
+[FakeLoader](http://joaopereirawd.github.io/fakeLoader.js/)
 
-[fontawesome](http://fontawesome.io/)
+[Fontawesome](http://fontawesome.io/)
 
 [Tesla Logo](https://commons.wikimedia.org/wiki/File:Tesla_Motors_Logo.svg)
 
@@ -213,12 +213,12 @@ The project is compatible with both Python 2.7.13 and Python 3.6.2
 
 - Requests design flow chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/Requests_flow_chart%20.png" align="center" width="400" overflow="hidden">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/Requests_flow_chart%20.png" align="center" width="600" overflow="hidden">
 
 ## Appendix 2: UI design flow chart
 
 - UI design flow chart
 
-    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/UI_design_flow_chart.png" align="center" width="400" overflow="hidden">
+    <img src="https://github.com/zidianlyu/survey_challenge/blob/master/docs/UI_design_flow_chart.png" align="center" width="600" overflow="hidden">
 
 [survey]: https://surveychallenge.herokuapp.com/
